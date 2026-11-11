@@ -1,17 +1,23 @@
-
 bundle:
   name: medallion_etl
+
+variables:
+  catalog:
+    description: Environment-specific Unity Catalog name
 
 include:
   - resources/*.yml
 
 targets:
-
   dev:
     default: true
     workspace:
       host: https://adb-7405605590471804.4.azuredatabricks.net
+    variables:
+      catalog: testing
 
   uat:
     workspace:
       host: https://adb-7405611383564529.9.azuredatabricks.net
+    variables:
+      catalog: testing_uat

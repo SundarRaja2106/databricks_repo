@@ -11,7 +11,8 @@
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
-catalog = "testing"
+dbutils.widgets.text("catalog", "testing")
+catalog = dbutils.widgets.get("catalog")
 bronze_schema = "bronze"
 silver_schema = "silver"
 
