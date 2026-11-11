@@ -10,7 +10,9 @@
 # DBTITLE 1,Configuration
 from pyspark.sql import functions as F
 
-catalog = "testing"
+dbutils.widgets.text("catalog", "testing")
+catalog = dbutils.widgets.get("catalog")
+
 silver_table = f"{catalog}.silver.silver_customer_orders"
 gold_schema = "gold"
 gold_table = f"{catalog}.{gold_schema}.gold_monthly_segment_sales"

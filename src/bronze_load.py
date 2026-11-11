@@ -11,8 +11,10 @@
 from pyspark.sql import functions as F
 
 # Target location for bronze tables
-catalog = "testing"
 schema = "bronze"
+
+dbutils.widgets.text("catalog", "testing")
+catalog = dbutils.widgets.get("catalog")
 
 # Source (built-in sample dataset) -> target table name
 sources = {
