@@ -1,0 +1,17 @@
+
+bundle:
+  name: medallion_etl
+
+include:
+  - resources/*.yml
+
+targets:
+
+  dev:
+    default: true
+    workspace:
+      host: https://adb-7405605590471804.4.azuredatabricks.net
+
+  uat:
+    workspace:
+      host: https://adb-7405611383564529.9.azuredatabricks.net
